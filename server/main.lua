@@ -128,12 +128,12 @@ AddEventHandler('marketplace:buy', function(id, item, amount, price)
             local seller = ESX.GetPlayerFromIdentifier(v.identifier)
             if seller then
                 if v.amount >= amount then 
-                    if xPlayer.getMoney() >= amount * price then 
+                    if xPlayer.getAccount(Config.Account).money >= amount * price then 
                         if xPlayer.canCarryItem(item, amount) then 
-                            xPlayer.removeMoney(amount * price)
+                            xPlayer.removeAccountMoney(Config.Account, amount * price)
                             xPlayer.addInventoryItem(item, amount)
 
-                            seller.addMoney(amount * price)
+                            seller.addAccountMoney(Config.Account, amount * price)
                             TriggerClientEvent('ox_lib:notify', seller.source, {description = Config.Text['item_selled'], position = Config.Notify.position, duration = Config.Notify.duration * 1000, iconAnimation = Config.Notify.animation, type = 'info'})            
     
                             if v.amount - amount == 0 then 
