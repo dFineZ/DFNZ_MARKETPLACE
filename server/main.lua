@@ -7,20 +7,30 @@ lib.callback.register('marketplace:getItems', function()
     local info = {}
     for k, v in pairs(inventory) do
         local check = blacklist(v.name)
-        if not check then
-            table.insert(info, {
-                item = v.name, 
-                label = ESX.GetItemLabel(v.name),
-                amount = v.count,
-            })            
-        end        
+        if Config.Items.blacklist then
+            if not check then
+                table.insert(info, {
+                    item = v.name, 
+                    label = ESX.GetItemLabel(v.name),
+                    amount = v.count
+                })            
+            end        
+        else
+            if check ~= nil then
+                table.insert(info, {
+                    item = v.name, 
+                    label = ESX.GetItemLabel(v.name),
+                    amount = v.count
+                })            
+            end            
+        end            
     end
     return info
 end)
 
 -- check if item is blacklisted
 function blacklist(item)
-    for k, v in pairs(Config.Blacklist) do
+    for k, v in pairs(Config.Items.items) do
         if item == v then
             return true
         end
