@@ -22,7 +22,10 @@ Config.Notify = {
     animation = 'beatFade'
 }
 
-Config.Blacklist = {'money', 'black_money', 'WEAPON_PISTOL'} --> add as many items you want
+Config.Items = {
+    blacklist = true,  --> if you set this to true all items in the items table can not be sold / if false only the items in the items table can be sold
+    items = {'money', 'black_money', 'WEAPON_PISTOL'} --> add as many items you want
+}
 
 Config.Location = { --> edit this if you want to use a static location for your marketplace
     enable = true, --> set this to false if you dont want to use a static location
