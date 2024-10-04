@@ -326,7 +326,7 @@ function showInserts()
                 },
                 onSelect = function()
                     local input = lib.inputDialog(v.label, {
-                        {type = 'number', min = 1, max = v.amount, label = Config.Text['how_many'], required = true},
+                        {type = 'number', min = 1, max = v.amount, description = Config.Text['buy_amount'], required = true},
                     })
                     if input == nil then 
                         showInserts()
