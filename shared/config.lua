@@ -1,5 +1,7 @@
 Config = {}
 
+-- If you need help or have any suggestions join my discord server https://discord.gg/B9dKDwD4Au
+
 Config.EnableWebhook = true  --> if true you need to have DFNZ_LOGGER installed (also set Config.UseLogger to true) or implement your own system
                              --> if you want to use your own webhook system go to fxmanifest.lua and remove DFNZ_LOGGER dependencies
                              --> set your webhook link in server/main.lua line 1
@@ -26,6 +28,8 @@ Config.Items = {
     blacklist = true,  --> if you set this to true all items in the items table can not be sold / if false only the items in the items table can be sold
     items = {'money', 'black_money', 'WEAPON_PISTOL'} --> add as many items you want
 }
+
+Config.Account = 'money' --> choose between money/bank or black_money (IMPORTANT the seller gets the money in the same account)
 
 Config.Location = { --> edit this if you want to use a static location for your marketplace
     enable = true, --> set this to false if you dont want to use a static location
