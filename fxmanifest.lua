@@ -4,7 +4,7 @@ lua54 'yes'
 
 author 'DFNZ'
 description 'Marketplace by DFNZscript'
-version '1.1.1'
+version '1.1.2'
 
 shared_script {
     '@es_extended/imports.lua',
