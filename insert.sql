@@ -5,4 +5,5 @@ CREATE TABLE `marketplace` (
   `label` varchar(50) DEFAULT NULL,
   `amount` int(11) DEFAULT NULL,
   `price` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  PRIMARY KEY (id)
+);
