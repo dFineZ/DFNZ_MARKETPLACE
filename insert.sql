@@ -1,5 +1,5 @@
 CREATE TABLE `marketplace` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(60) DEFAULT NULL,
   `item` varchar(50) DEFAULT NULL,
   `label` varchar(50) DEFAULT NULL,
